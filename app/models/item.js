@@ -9,22 +9,23 @@ var itemSchema = mongoose.Schema({
     type: String,
     required: true
   },
-  create_date:{
+  createdAt:{
     type: Date,
     default: Date.now
   }
 });
+
 var Item = module.exports = mongoose.model('Item', itemSchema);
 
-module.exports.getItems = function(cb, limit){
+module.exports.all = function(cb, limit){
   Item.find(cb).limit(limit);
 };
 
-module.exports.addItem = function(item, cb){
+module.exports.create = function(item, cb){
   Item.create(item, cb);
 };
 
-module.exports.updateItem = function(id, item, options, cb){
+module.exports.update = function(id, item, options, cb){
   var query = {_id: id};
   var update = {
     name: item.name,
@@ -35,7 +36,6 @@ module.exports.updateItem = function(id, item, options, cb){
   };
   Item.findOneAndUpdate(query, update, options, cb);
 };
-
 
 module.exports.deleteItem = function(id, cb){
   var query = {_id: id};
