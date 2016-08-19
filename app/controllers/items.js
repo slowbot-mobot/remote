@@ -15,7 +15,7 @@ var ItemsController = function(req, res) {
     res.html("<h1>Create a Item</h1");
   };
 
-  var create = function() {
+  var itemCreate = function() {
     Item.create(req.body, function(err, item){
       if (err){
         throw err;
@@ -24,11 +24,11 @@ var ItemsController = function(req, res) {
     });
   };
 
-  var ItemEdit = function() {
+  var itemEdit = function() {
     res.html("<h1>Edit a Item</h1");
   };
 
-  var update = function() {
+  var itemUpdate = function() {
     Item.update(req.body, function(err, item){
       if (err){
         throw err;
@@ -37,13 +37,13 @@ var ItemsController = function(req, res) {
     });
   };
 
-  var show = function() {
+  var itemShow = function() {
     Item.show(req.body, function(err, item) {
       res.json(item);
     });
   };
 
-  var destroy = function() {
+  var itemDestroy = function() {
     var id = req.params._id;
     Item.deleteItem(id, function(err, item){
       if (err){
@@ -58,9 +58,13 @@ var ItemsController = function(req, res) {
     // ---------------------------------------------
     // index    get             /api/items
     itemIndex: itemIndex,
-
     // new      get             /api/items/new
     itemNew: itemNew,
+    itemCreate : itemCreate,
+    itemEdit : itemEdit,
+    itemUpdate : itemUpdate,
+    itemShow : itemShow,
+    itemDestroy: itemDestroy
   };
 
 };
