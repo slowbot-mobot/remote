@@ -1,0 +1,10 @@
+.component {
+  float: right;
+  position: relative;
+  height: 100%;
+  width: 25%;
+  background: #eee;
+
+  padding: 2em;
+
+}

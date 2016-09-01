@@ -8,7 +8,7 @@ RoomsController = require('../app/controllers/rooms')
 
 module.exports = Router = function(app) {
   app.get('/', function(req, res){
-    res.send('Homepage')
+    res.render('index', {})
   })
 
   require('../app/routes/items')(app)
