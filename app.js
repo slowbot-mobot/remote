@@ -1,11 +1,13 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var app = express();
+var express = require('express')
+var bodyParser = require('body-parser')
+var app = express()
 
-app.use(bodyParser.json());
+// reactify that shit
 
-require('./config/db')().init();
-require('./config/routes')(app);
+app.use(bodyParser.json())
 
-app.listen(3000);
-console.log('Check localhost:3000');
+require('./config/db')().init()
+require('./config/routes')(app)
+
+app.listen(3000)
+console.log('Check localhost:3000')

@@ -1,11 +1,13 @@
 ItemsController = require('../controllers/items');
+
 var itemRoutes = function(app) {
 
   app.get('/api/items', function(req, res){
     ItemsController(req, res).itemIndex();
-    //ItemsController(req, res).itemShow();
-    //ItemsController(req, res).itemNew();
-    //ItemsController(req, res).itemEdit();
+  });
+
+  app.get('/api/items/:_id', function(req, res){
+    ItemsController(req, res).itemShow();
   });
 
   app.post('/api/items', function(req, res){

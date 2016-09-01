@@ -1,18 +1,18 @@
-Item = require('../app/models/item');
-Player = require('../app/models/player');
-Room = require('../app/models/room');
+Item = require('../app/models/item')
+Player = require('../app/models/player')
+Room = require('../app/models/room')
 
-ItemsController = require('../app/controllers/items');
-//PlayersController = require('../app/controllers/players');
+ItemsController = require('../app/controllers/items')
+PlayersController = require('../app/controllers/players')
+RoomsController = require('../app/controllers/rooms')
 
-var Router = function(app) {
+module.exports = Router = function(app) {
   app.get('/', function(req, res){
-    res.send('Hello, hauiofhsaohfidos.');
-  });
+    res.send('Homepage')
+  })
 
-  require('../app/routes/items')(app);
-  require('../app/routes/players')(app);
+  require('../app/routes/items')(app)
+  require('../app/routes/players')(app)
+  require('../app/routes/rooms')(app)
 
-};
-
-module.exports = Router;
+}

@@ -5,30 +5,29 @@ var roomSchema = mongoose.Schema({
     type: String,
     required: true
   },
-  create_date:{
+  size: {
+    type: String,
+    required: true
+  },
+  createdAt:{
     type: Date,
     default: Date.now
   }
 });
-var room = module.exports = mongoose.model('Room', roomSchema);
 
-module.exports.getRoom = function(cb, limit){
-  Room.find(cb).limit(limit);
+var Room = mongoose.model('Room', roomSchema);
+
+Room.all = function(cb, limit){
+  Room.find(cb)
+      .limit(limit);
 };
 
-module.exports.createRoom = function(room, limit){
-  Room.create(cb);
+Room.show = function(opts, cb){
+  Room.findOne(opts, cb);
 };
 
-module.exports.updateRoom = function(id, room, options, cb){
-  var query = {_id: id};
-  var update = {
-    name: room.name,
-  };
-  room.findOneAndUpdate(query, update, options, cb);
+Room.destroy = function(opts, cb){
+  Room.findOneAndRemove(opts, cb);
 };
 
-module.exports.deletePlayer = function(id, cb){
-  var query = {_id: id};
-  Room.remove(query, cb);
-};
+module.exports = Room;

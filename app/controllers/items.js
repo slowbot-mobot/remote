@@ -11,27 +11,19 @@ var ItemsController = function(req, res) {
     });
   };
 
-  var itemNew = function() {
-    res.html("<h1>Create a Item</h1");
-  };
-
   var itemCreate = function() {
     Item.create(req.body, function(err, item){
       if (err){
-        throw err;
+        return res.status(400).send({errors: err});
       }
       res.json(item);
     });
   };
 
-  var itemEdit = function() {
-    res.html("<h1>Edit a Item</h1");
-  };
-
   var itemUpdate = function() {
     Item.update(req.body, function(err, item){
       if (err){
-        throw err;
+        return res.status(400).send({errors: err});
       }
       res.json(item);
     });
@@ -45,7 +37,7 @@ var ItemsController = function(req, res) {
 
   var itemDestroy = function() {
     var id = req.params._id;
-    Item.deleteItem(id, function(err, item){
+    Item.destroy(id, function(err, item){
       if (err){
         throw err;
       }
@@ -54,14 +46,8 @@ var ItemsController = function(req, res) {
   };
 
   return {
-    // ACTION   HTTP METHOD     URL
-    // ---------------------------------------------
-    // index    get             /api/items
     itemIndex: itemIndex,
-    // new      get             /api/items/new
-    itemNew: itemNew,
     itemCreate : itemCreate,
-    itemEdit : itemEdit,
     itemUpdate : itemUpdate,
     itemShow : itemShow,
     itemDestroy: itemDestroy
@@ -70,4 +56,3 @@ var ItemsController = function(req, res) {
 };
 
 module.exports = ItemsController;
-

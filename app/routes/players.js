@@ -1,19 +1,25 @@
+PlayersController = require('../controllers/players');
+
 var playerRoutes = function(app) {
 
-  app.get('/api/Players', function(req, res){
-    PlayersController(req, res).index();
+  app.get('/api/players', function(req, res){
+    PlayersController(req, res).playerIndex();
   });
 
-  app.post('/api/Players', function(req, res){
-    PlayersController(req, res).create();
+  app.get('/api/players/:_id', function(req, res){
+    PlayersController(req, res).playerShow();
   });
 
-  app.put('/api/Players/:_id', function(req, res){
-    PlayersController(req, res).show();
+  app.post('/api/players', function(req, res){
+    PlayersController(req, res).playerCreate();
   });
 
-  app.delete('/api/Players/:_id', function(req, res){
-    PlayersController(req, res).destroy();
+  app.put('/api/players/:_id', function(req, res){
+    PlayersController(req, res).playerUpdate();
+  });
+
+  app.delete('/api/players/:_id', function(req, res){
+    PlayersController(req, res).playerDestroy();
   });
 
 };

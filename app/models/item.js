@@ -15,29 +15,19 @@ var itemSchema = mongoose.Schema({
   }
 });
 
-var Item = module.exports = mongoose.model('Item', itemSchema);
+var Item = mongoose.model('Item', itemSchema);
 
-module.exports.all = function(cb, limit){
-  Item.find(cb).limit(limit);
+Item.all = function(cb, limit){
+  Item.find(cb)
+      .limit(limit);
 };
 
-module.exports.create = function(item, cb){
-  Item.create(item, cb);
+Item.show = function(opts, cb){
+  Item.findOne(opts, cb);
 };
 
-module.exports.update = function(id, item, options, cb){
-  var query = {_id: id};
-  var update = {
-    name: item.name,
-    type: item.type,
-    damage: item.damage,
-    effect: item.effect,
-    degree: item.degree
-  };
-  Item.findOneAndUpdate(query, update, options, cb);
+Item.destroy = function(opts, cb){
+  Item.findOneAndRemove(opts, cb);
 };
 
-module.exports.deleteItem = function(id, cb){
-  var query = {_id: id};
-  Item.remove(query, cb);
-};
+module.exports = Item;
