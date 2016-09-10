@@ -5,8 +5,28 @@ var playerSchema = mongoose.Schema({
     type: String,
     required: true
   },
-  profession: {
-    type: String,
+  Str: {
+    type: Number,
+    required: true
+  },
+  Int: {
+    type: Number,
+    required: true
+  },
+  Wis: {
+    type: Number,
+    required: true
+  },
+  Dex: {
+    type: Number,
+    required: true
+  },
+  Cha: {
+    type: Number,
+    required: true
+  },
+  Con: {
+    type: Number,
     required: true
   },
   createdAt:{

@@ -1,0 +1,9 @@
+.component {
+  height:50%;
+  width: 100%;
+  background: #eee;
+  float: bottom;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}

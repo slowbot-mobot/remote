@@ -1,4 +1,5 @@
 const React = require('react')
+const Stats = require('./statschar')
 import css from './character.css'
 
 const Character = React.createClass({
@@ -6,6 +7,7 @@ const Character = React.createClass({
     return (
       <div className={css.component}>
         character
+        <Stats />
       </div>
     )
   }
