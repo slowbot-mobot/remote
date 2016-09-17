@@ -1,5 +1,5 @@
 const React = require('react')
-import css from './world.css'
+import css from './World.css'
 
 const World = React.createClass({
   render () {

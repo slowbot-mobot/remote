@@ -1,4 +1,5 @@
 const React = require('react')
+import css from './theme.css'
 
 const Theme = React.createClass({
   render () {
@@ -9,7 +10,9 @@ const Theme = React.createClass({
           <meta description={this.props.metaDescription} />
         </head>
         <body>
-          {this.props.children}
+          <div className="container">
+           {this.props.children}
+          </div>
         </body>
       </html>
     )

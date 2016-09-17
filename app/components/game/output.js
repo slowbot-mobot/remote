@@ -1,8 +1,8 @@
 const React = require('react')
-const World = require('./world')
-const Character = require('./character')
+const World = require('./World')
+const Character = require('./Character')
 
-import css from './output.css'
+import css from './Output.css'
 
 const Output = React.createClass({
   render () {

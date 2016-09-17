@@ -1,6 +1,6 @@
 const React = require('react')
-const Stats = require('./statschar')
-import css from './character.css'
+const Stats = require('./Stats')
+import css from './Character.css'
 
 const Character = React.createClass({
   render () {

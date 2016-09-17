@@ -1,8 +1,8 @@
 const React = require('react')
-const Output = require('./output')
-const Input = require('./input')
+const Output = require('./Output')
+const Input = require('./Input')
 
-const css = require('./game.css')
+const css = require('./Game.css')
 
 const Game = React.createClass({
   render () {

@@ -1,5 +1,5 @@
 const React = require('react')
-import css from './input.css'
+import css from './Input.css'
 
 const Input = React.createClass({
   render () {
