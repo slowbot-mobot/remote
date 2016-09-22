@@ -1,15 +1,18 @@
-import React from 'react';
-import styles from './App.css';
-
+import React from 'react'
+import styles from './App.css'
+import Theme from './components/theme'
 import Index from './components/index'
 
-export default class App extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-  render() {
+const App = React.createClass({
+
+render() {
     return (
       <Index />
     );
   }
+})
+
+App.PropTypes = {
 }
+
+module.exports = App

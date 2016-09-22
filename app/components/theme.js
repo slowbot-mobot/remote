@@ -4,17 +4,15 @@ import css from './theme.css'
 const Theme = React.createClass({
   render () {
     return (
-      <html>
+      <div>
         <head>
           <title>{this.props.title}</title>
           <meta description={this.props.metaDescription} />
         </head>
         <body>
-          <div className="container">
            {this.props.children}
-          </div>
         </body>
-      </html>
+      </div>
     )
   }
 })

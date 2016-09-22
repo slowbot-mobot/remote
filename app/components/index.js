@@ -14,12 +14,12 @@ const Index = React.createClass({
 
   render () {
     return (
-      <Theme>
+      <div>
         {(this.state.currentPlayer !== null)
           ? <Game className={css.component} />
           : <Account />
         }
-      </Theme>
+      </div>
     )
   }
 })

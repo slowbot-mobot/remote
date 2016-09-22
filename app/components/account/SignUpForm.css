@@ -1,0 +1,25 @@
+
+.component{
+  width:45%;
+  margin: auto;
+}
+.form{
+  width:50%;
+  margin: 0.5em;
+}
+input {
+  padding:0.5em;
+  margin:0.5em;
+  display: block;
+  width:100%;
+}
+div{
+  height:75%;
+}
+:global .valid-true{
+  background:white;
+}
+:global .valid-false{
+  background:red;
+}
+

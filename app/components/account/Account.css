@@ -1,11 +1,15 @@
-
-:global *,
-:global *:before,
-:global *:after{
+:global
+ *,
+:global
+ *:before,
+:global
+ *:after{
   box-sizing: border-box;
 }
-:global html,
-:global body{
+:global
+ html,
+:global
+ body{
   width:100%;
   background:#eee;
   box-sizing: border-box;
@@ -17,3 +21,4 @@
   background:#fff;
   padding:2em;
 }
+

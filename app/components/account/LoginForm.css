@@ -1,8 +1,9 @@
 .component{
   width:45%;
+  margin: auto;
 }
 .form{
-  width:100%;
+  width:50%;
   margin: 0.5em;
 }
 input {
@@ -10,4 +11,7 @@ input {
   margin:0.5em;
   display: block;
   width:100%;
+}
+div{
+  height:75%;
 }
